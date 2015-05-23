@@ -472,11 +472,16 @@
     
     // Make the view small and transparent before animation
     self.alpha = 0.f;
-    self.transform = CGAffineTransformMakeScale(0.1f, 0.1f);
     
+    // Delay fixes autolayout issue with iOS 8
+    [self performSelector:@selector(animateIn) withObject:nil afterDelay:0.1];
+}
+
+- (void)animateIn {
     // animate into full size
     // First stage animates to 1.05x normal size, then second stage animates back down to 1x size.
     // This two-stage animation creates a little "pop" on open.
+    self.transform = CGAffineTransformMakeScale(0.1f, 0.1f);
     [UIView animateWithDuration:0.2f delay:0.f options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.alpha = 1.f;
         self.transform = CGAffineTransformMakeScale(1.05f, 1.05f);
