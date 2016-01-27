@@ -7,10 +7,6 @@ For More Information, please see our full blog post:
 
 ***
 
-<img src="http://www.getosito.com/img/postImages/popoverMap.png" width="320" height="480" />
-
-***
-
 ##Demonstration##
 As a quick demonstration, I used a UIView from another one of my components called OCCalendar[^1].  To display this to the user on tap, I simply allocate and initialize the view, then I use a single line to display it to the user.    The PopoverView handles positioning above/below the point of interest, handles all of the memory management, and manages the view stack so it gets displayed to the user at the correct location.
 
@@ -23,8 +19,6 @@ OCDaysView *daysView = [[OCDaysView alloc] initWithFrame:CGRectMake(0, 0, 150, 1
 ```
 
 As you may note, I have two versions of the display code here.  One of them displays the `daysView` as a single `contentView` with no title, and the other displays the same view with a "October 2012" title.
-
-<img src="http://www.getosito.com/img/postImages/popoverCal1.png" width="320" height="480" />
 
 ***
 
